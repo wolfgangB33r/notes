@@ -14,6 +14,15 @@ df['price'].dropna()
 df = df[df['price'] > 0]
 ```
 
+### Replace missing values with a default value
+
+```python
+df = df.fillna(value=0, inplace=True)
+```
+```python
+df = df.replace([np.inf, -np.inf], np.nan)
+```
+
 ### Write first N rows to a CSV file
 ```python
 df.head(n=100).to_csv('test.csv', encoding='utf-8', index=False)
