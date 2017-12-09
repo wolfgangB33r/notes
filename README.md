@@ -14,6 +14,11 @@ df['price'].dropna()
 df = df[df['price'] > 0]
 ```
 
+### Write first N rows to a CSV file
+```python
+df.head(n=100).to_csv('test.csv', encoding='utf-8', index=False)
+```
+
 ## Text analysis and machine learning
 
 ### Vectorize a pandas text column by using Tfidf vectors
@@ -21,11 +26,6 @@ df = df[df['price'] > 0]
 tv = TfidfVectorizer(max_features=NR_MAX_TEXT_FEATURES, stop_words='english')
 tfidf = tv.fit_transform(data['item_description'])
 print(tfidf.shape)
-```
-
-### Write first N rows to a CSV file
-```python
-df.head(n=100).to_csv('test.csv', encoding='utf-8', index=False)
 ```
 
 ### Convert a Tf-idf sparse matrix to a pandas dataframe
