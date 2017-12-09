@@ -7,7 +7,7 @@ The The TF-IDF vectoriser results in a sparse output as a scipy CSR matrix. This
 
 Solutions are:
 ```python
-df['vector']=list(x)
+df['vector'] = list(x)
 ```
 Stores the data in a column named 'vector'. The newly added column is in sparse format. 
 
@@ -17,6 +17,6 @@ df['vector'] = list(x.toarray())
 ```
 Or to directly create a pandas Dataframe use:
 ```python
-df=pd.DataFrame(list(text_features.toarray()))
+df = pd.DataFrame(list(text_features.toarray()))
 ```
 
