@@ -1,5 +1,19 @@
 # Notes
 
+## Basics working with pandas
+
+# Drop rows with missing values
+
+```python
+df['price'].dropna()
+```
+
+# Drop rows where value does not meet criteria
+
+```python
+df = df[df['price'] > 0]
+```
+
 ## Text analysis and machine learning
 
 ### Vectorize a pandas text column by using Tfidf vectors
