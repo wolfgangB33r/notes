@@ -23,6 +23,11 @@ tfidf = tv.fit_transform(data['item_description'])
 print(tfidf.shape)
 ```
 
+### Write first N rows to a CSV file
+```python
+df.head(n=100).to_csv('test.csv', encoding='utf-8', index=False)
+```
+
 ### Convert a Tf-idf sparse matrix to a pandas dataframe
 
 The The TF-IDF vectoriser results in a sparse output as a scipy CSR matrix. This CSR matrix cannot be directly added to a pandas dataframe object. 
