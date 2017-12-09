@@ -1,5 +1,11 @@
 # Notes
 
+## Vectorize a pandas text column by using Tfidf vectors
+```python
+tv = TfidfVectorizer(max_features=NR_MAX_TEXT_FEATURES, stop_words='english')
+tfidf = tv.fit_transform(data['item_description'])
+print(tfidf.shape)
+```
 
 ## Convert a Tf-idf sparse matrix to a pandas dataframe
 
