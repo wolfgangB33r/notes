@@ -1,13 +1,15 @@
 # Notes
 
-## Vectorize a pandas text column by using Tfidf vectors
+## Text analysis and machine learning
+
+### Vectorize a pandas text column by using Tfidf vectors
 ```python
 tv = TfidfVectorizer(max_features=NR_MAX_TEXT_FEATURES, stop_words='english')
 tfidf = tv.fit_transform(data['item_description'])
 print(tfidf.shape)
 ```
 
-## Convert a Tf-idf sparse matrix to a pandas dataframe
+### Convert a Tf-idf sparse matrix to a pandas dataframe
 
 The The TF-IDF vectoriser results in a sparse output as a scipy CSR matrix. This CSR matrix cannot be directly added to a pandas dataframe object. 
 
