@@ -2,13 +2,13 @@
 
 ## Basics working with pandas
 
-# Drop rows with missing values
+### Drop rows with missing values
 
 ```python
 df['price'].dropna()
 ```
 
-# Drop rows where value does not meet criteria
+### Drop rows where value does not meet criteria
 
 ```python
 df = df[df['price'] > 0]
