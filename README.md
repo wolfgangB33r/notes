@@ -17,7 +17,7 @@ df = df[df['price'] > 0]
 ### Replace missing values with a default value
 
 ```python
-df = df.fillna(value=0, inplace=True)
+df = df.fillna(value=0)
 ```
 ```python
 df = df.replace([np.inf, -np.inf], np.nan)
