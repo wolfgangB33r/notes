@@ -56,3 +56,7 @@ Or to directly create a pandas Dataframe use:
 df = pd.DataFrame(list(text_features.toarray()))
 ```
 
+## References
+
+http://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
+
