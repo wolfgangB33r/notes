@@ -1,5 +1,15 @@
 # Notes
 
+## Basics working with numpy
+
+### Assign N columns 
+
+two_columns = text_f[:,[0,1]]
+
+### Calculate the sum of one row
+
+sum = np.sum(axis=1)
+
 ## Basics working with pandas
 
 ### Drop rows with missing values
