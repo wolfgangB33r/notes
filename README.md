@@ -34,6 +34,10 @@ df = df.fillna(value=0)
 ```python
 df = df.replace([np.inf, -np.inf], np.nan)
 ```
+### Calculate the correlation with a specific column
+```python
+df.corr()['price'])
+```
 
 ### Write first N rows to a CSV file
 ```python
