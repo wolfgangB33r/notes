@@ -4,12 +4,14 @@
 
 ### Assign N columns 
 
+```python
 two_columns = text_f[:,[0,1]]
+```
 
 ### Calculate the sum of one row
-
+```python
 sum = np.sum(axis=1)
-
+```
 ## Basics working with pandas
 
 ### Drop rows with missing values
