@@ -72,6 +72,14 @@ Or to directly create a pandas Dataframe use:
 df = pd.DataFrame(list(text_features.toarray()))
 ```
 
+## Normalizing
+
+### Normalize an array between min and max
+```python
+from sklearn import preprocessing as pre
+min_max_scaler = pre.MinMaxScaler()
+normalized = min_max_scaler.fit_transform(matrix)
+```
 ## References
 
 http://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
