@@ -74,12 +74,20 @@ df = pd.DataFrame(list(text_features.toarray()))
 
 ## Normalizing
 
-### Normalize an array between min and max
+### Normalize an array between min and max with sklearn
+
 ```python
 from sklearn import preprocessing as pre
 min_max_scaler = pre.MinMaxScaler()
 normalized = min_max_scaler.fit_transform(matrix)
 ```
+
+### Normalize a column of a pandas dataframe between 0 and 1
+
+```python
+df['col1'] = (df['col1']-df['col1'].min())/(df['col1'].max()-df['col1'].min())
+```
+
 ## References
 
 http://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
