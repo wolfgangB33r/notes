@@ -88,6 +88,23 @@ normalized = min_max_scaler.fit_transform(matrix)
 df['col1'] = (df['col1']-df['col1'].min())/(df['col1'].max()-df['col1'].min())
 ```
 
+## Feature selection
+
+```python
+import numpy as np
+from sklearn.feature_selection import SelectKBest, f_classif
+predictors = ["Pclass", "Sex", "Age", "SibSp", "Parch", "Fare", "Embarked", "FamilySize", "Title", "FamilyId"]
+# Perform feature selection
+selector = SelectKBest(f_classif, k=5)
+selector.fit(titanic[predictors], titanic["Survived"])
+# Get the raw p-values for each feature, and transform from p-values into scores
+scores = -np.log10(selector.pvalues_)
+# Plot the scores.  See how "Pclass", "Sex", "Title", and "Fare" are the best?
+plt.bar(range(len(predictors)), scores)
+plt.xticks(range(len(predictors)), predictors, rotation='vertical')
+plt.show()
+```
+
 ## References
 
 http://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
