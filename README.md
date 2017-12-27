@@ -105,6 +105,19 @@ plt.xticks(range(len(predictors)), predictors, rotation='vertical')
 plt.show()
 ```
 
+## Feature selection on train and test data
+
+```python
+import numpy as np
+from sklearn.feature_selection import SelectKBest, f_classif
+# Perform feature selection
+selector = SelectKBest(f_classif, k=5) # select 5 best correlating features
+selector.fit(train_x, y)
+train_selected_x = selector.transform(train_x)
+test_selected_x = selector.transform(test_x)
+# and go on training the model
+``` 
+
 ## References
 
 http://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
