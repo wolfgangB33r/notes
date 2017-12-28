@@ -1,5 +1,15 @@
 # Notes
 
+## Useful snippets
+
+### Hash a string into a normalized float between 0 and 1
+
+```python
+import random
+random.seed(hash(your_string))
+random.random()
+```
+
 ## Basics working with numpy
 
 ### Assign N columns 
