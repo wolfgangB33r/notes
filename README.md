@@ -1,15 +1,5 @@
 # Notes
 
-## Useful snippets
-
-### Hash a string into a normalized float between 0 and 1
-
-```python
-import random
-random.seed(hash(your_string))
-random.random()
-```
-
 ## Basics working with numpy
 
 ### Assign N columns 
@@ -138,6 +128,18 @@ train_selected_x = selector.transform(train_x)
 test_selected_x = selector.transform(test_x)
 # and go on training the model
 ``` 
+
+## Some useful snippets 
+
+### Hash a string into a normalized float between 0 and 1
+
+It may seem strange to use random function below to get a normalized hash number between the boundaries of 0 and 1 but it works like a charm. As the seed is set through the standard has function you always get the corresponding mapped hash number between 0 and 1. 
+
+```python
+import random
+random.seed(hash(your_string))
+random.random()
+```
 
 ## References
 
