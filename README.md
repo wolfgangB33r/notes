@@ -82,6 +82,17 @@ Or to directly create a pandas Dataframe use:
 df = pd.DataFrame(list(text_features.toarray()))
 ```
 
+### Sentiment analysis
+
+- Google's Word2Vec
+- Glove 
+- 
+
+https://www.kaggle.com/c/word2vec-nlp-tutorial
+
+
+
+
 ## Normalizing
 
 ### Normalize an array between min and max with sklearn
