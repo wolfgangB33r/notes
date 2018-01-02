@@ -80,7 +80,12 @@ df = pd.DataFrame(list(text_features.toarray()))
 
 https://www.kaggle.com/c/word2vec-nlp-tutorial
 
-
+- Load a pretrained Google Word2Vec model:
+```python
+import gensim
+# Load Google's pre-trained Word2Vec model.
+model = gensim.models.KeyedVectors.load_word2vec_format('./GoogleNews-vectors-negative300.bin', binary=True)
+```
 
 
 ## Normalizing
