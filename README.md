@@ -46,6 +46,8 @@ df.head(n=100).to_csv('test.csv', encoding='utf-8', index=False)
 
 ## Text analysis and machine learning
 
+Classical bad-of-word approches such as count vectors and Tfidf vectors are outperformed by sentiment analysis such as Word2vec or Glove.
+
 ### Vectorize a pandas text column by using Tfidf vectors
 ```python
 tv = TfidfVectorizer(max_features=NR_MAX_TEXT_FEATURES, stop_words='english')
