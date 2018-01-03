@@ -87,6 +87,20 @@ import gensim
 model = gensim.models.KeyedVectors.load_word2vec_format('./GoogleNews-vectors-negative300.bin', binary=True)
 ```
 
+### Clean textual input
+
+```python
+def text_to_words(raw_text, remove_stopwords=False):
+    # 1. Remove non-letters, but including numbers
+    letters_only = re.sub("[^0-9a-zA-Z]", " ", raw_text)
+	  # 2. Convert to lower case, split into individual words
+    words = letters_only.lower().split()
+    if remove_stopwords:
+        stops = set(stopwords.words("english")) # In Python, searching a set is much faster than searching
+        meaningful_words = [w for w in words if not w in stops] # Remove stop words
+        words = meaningful_words
+    return words 
+```
 
 ## Normalizing
 
