@@ -104,6 +104,24 @@ def text_to_words(raw_text, remove_stopwords=False):
     return words 
 ```
 
+### Train word2vec model
+
+```python
+from gensim.models import word2vec
+# Set values for various parameters
+num_features = 300    # Word vector dimensionality                      
+min_word_count = 40   # Minimum word count                        
+num_workers = 4       # Number of threads to run in parallel
+context = 10          # Context window size                                                                                   sentences_train = [['hello', 'this', 'is', 'a', 'sentence'], ['Second', 'one'],['third', 'sentence']] 
+
+downsampling = 1e-3   # Downsample setting for frequent words
+# Initialize and train the model (this will take some time)
+model = word2vec.Word2Vec(sentences_train, workers=num_workers, size=num_features, min_count = min_word_count, window = context, sample = downsampling)
+model.init_sims(replace=True) # end training to speed up use of model
+# print most similar words
+print(model.most_similar('woman'))
+```
+
 ## Normalizing
 
 ### Normalize an array between min and max with sklearn
