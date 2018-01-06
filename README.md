@@ -122,6 +122,22 @@ model.init_sims(replace=True) # end training to speed up use of model
 print(model.most_similar('woman'))
 ```
 
+### Load a GloVe model
+In case you have a pretrained GloVe word file available for your textual corpus, you can use this little script to load the words along their vector representation.
+
+```python
+def loadGloveModel(gloveFile):
+    f = open(gloveFile,'r')
+    model = {}
+    for line in f:
+        splitLine = line.split()
+        word = splitLine[0]
+        embedding = np.array([float(val) for val in splitLine[1:]])
+        model[word] = embedding
+    print("Done. %d words loaded!" % len(model))
+    return model
+ ```
+
 ## Normalizing
 
 ### Normalize an array between min and max with sklearn
