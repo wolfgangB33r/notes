@@ -184,4 +184,6 @@ random.random()
 
 - [Scikit](http://scikit-learn.org/stable/tutorial/machine_learning_map/index.html) Basic Python machine learning libraries
 - [Keras](https://keras.io/) High level Python Deep Learning library
+- [Word2vec](https://code.google.com/archive/p/word2vec/) Google word vector implementation
+- [GloVe](https://nlp.stanford.edu/projects/glove/) Standford Global Vectors for Word Representation
 
