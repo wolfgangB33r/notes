@@ -182,5 +182,6 @@ random.random()
 
 ## References
 
-http://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
+[Scikit](http://scikit-learn.org/stable/tutorial/machine_learning_map/index.html) Basic Python machine learning libraries
+[Keras](https://keras.io/) High level Python Deep Learning library
 
