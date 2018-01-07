@@ -196,6 +196,10 @@ random.seed(hash(your_string))
 random.random()
 ```
 
+## Glossary
+
+- LSTM: Long short-term memory units are a building block for layers of a recurrent neural network (RNN). An RNN composed of LSTM units is often called an LSTM network
+
 ## References
 
 - [Scikit](http://scikit-learn.org/stable/tutorial/machine_learning_map/index.html) Basic Python machine learning libraries
