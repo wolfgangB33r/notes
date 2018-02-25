@@ -196,6 +196,76 @@ random.seed(hash(your_string))
 random.random()
 ```
 
+## Load Glove model from file
+
+```python
+
+def makeFeatureVec(words, model, num_features):
+    # Pre-initialize an empty numpy array (for speed)
+    featureVec = np.zeros((num_features,), dtype="float32")
+    nwords = 0
+    # Loop over each word in the review and, if it is in the model's
+    # vocaublary, add its feature vector to the total
+    for word in words:
+        if word in model: 
+            nwords = nwords + 1
+            featureVec = np.add(featureVec, model[word])
+    # Divide the result by the number of words to get the average
+    if nwords == 0:
+        nwords = 1
+    featureVec = np.divide(featureVec, nwords)
+    return featureVec
+
+def getAvgFeatureVecs(reviews, model, num_features):
+    # Given a set of reviews (each one a list of words), calculate 
+    # the average feature vector for each one and return a 2D numpy array 
+    # Initialize a counter
+    counter = 0
+    # Preallocate a 2D numpy array, for speed
+    reviewFeatureVecs = np.zeros((len(reviews), num_features), dtype="float32")
+    # Loop through the reviews
+    for review in reviews:
+       #
+       # Print a status message every 1000th review
+       #if counter%1000 == 0:
+        #   print("Review %d of %d" % (counter, len(reviews)))
+       # 
+       # Call the function (defined above) that makes average feature vectors
+       reviewFeatureVecs[counter] = makeFeatureVec(review, model, num_features)
+       #
+       # Increment the counter
+       counter = counter + 1
+    return reviewFeatureVecs
+
+
+def loadGloveModel(gloveFile):
+    f = open(gloveFile,'r')
+    model = {}
+    for line in f:
+        splitLine = line.split()
+        word = splitLine[0]
+        embedding = np.array([float(val) for val in splitLine[1:]])
+        model[word] = embedding
+    print("Done. %d words loaded!" % len(model))
+    return model
+    
+    
+    
+# load glove model
+wm = loadGloveModel('../input/glove-global-vectors-for-word-representation/glove.6B.50d.txt')
+num_features = 50
+f_matrix_train_word = getAvgFeatureVecs(sentences_train, wm, num_features)
+f_matrix_test_word = getAvgFeatureVecs(sentences_test, wm, num_features)
+    
+# load glove model from twitter
+wm_tw = loadGloveModel('../input/glove-twitter/glove.twitter.27B.25d.txt')
+num_features = 25
+f_matrix_train_word_twitter = getAvgFeatureVecs(sentences_train, wm_tw, num_features)
+f_matrix_test_word_twitter = getAvgFeatureVecs(sentences_test, wm_tw, num_features)
+    
+```
+
+
 ## Glossary
 
 - LSTM: Long short-term memory units are a building block for layers of a recurrent neural network (RNN). An RNN composed of LSTM units is often called an LSTM network
