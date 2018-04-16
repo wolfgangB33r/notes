@@ -44,6 +44,11 @@ df.corr()['price'])
 df.head(n=100).to_csv('test.csv', encoding='utf-8', index=False)
 ```
 
+### Set a value for a slice of a DataFrame
+```python
+df.loc[df['ip'] == ip, 'goodip'] = 1
+```
+
 ## Text analysis and machine learning
 
 Classical bad-of-word approches such as count vectors and Tfidf vectors are outperformed by sentiment analysis such as Word2vec or Glove.
