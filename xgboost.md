@@ -17,3 +17,5 @@ result_prop_class_1 = pred[:,1]
 ```python
 model.fit(train_X, df['label'], xgb_model=model)
 ```
+
+http://xgboost-clone.readthedocs.io/en/latest/parameter.html#learning-task-parameters
