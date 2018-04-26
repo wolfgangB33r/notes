@@ -117,7 +117,8 @@ from gensim.models import word2vec
 num_features = 300    # Word vector dimensionality                      
 min_word_count = 40   # Minimum word count                        
 num_workers = 4       # Number of threads to run in parallel
-context = 10          # Context window size                                                                                   sentences_train = [['hello', 'this', 'is', 'a', 'sentence'], ['Second', 'one'],['third', 'sentence']] 
+context = 10          # Context window size     
+sentences_train = [['hello', 'this', 'is', 'a', 'sentence'], ['Second', 'one'],['third', 'sentence']] 
 
 downsampling = 1e-3   # Downsample setting for frequent words
 # Initialize and train the model (this will take some time)
