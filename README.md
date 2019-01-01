@@ -48,6 +48,10 @@ df.head(n=100).to_csv('test.csv', encoding='utf-8', index=False)
 ```python
 df.loc[df['ip'] == ip, 'goodip'] = 1
 ```
+### Convert a value column into bins
+```python
+pd.cut(df['A'], bins=[0, 2, 8, 10], include_lowest=True)
+```
 
 ## Text analysis and machine learning
 
